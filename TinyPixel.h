@@ -26,12 +26,12 @@ struct GRBPixel {
 	uint8_t b;
 };
 
-void tp_ledsetup(uint8_t ledPin, uint16_t pixelCount, bool enableBuffer);
-void tp_sendGRBPixel(GRBPixel* pixelPtr);
-void tp_sendPixel(uint8_t r, uint8_t g , uint8_t b);
-void tp_latch();
-void tp_setGRBBuffer(uint16_t index, GRBPixel pixel);
-void tp_setBuffer(uint16_t index, uint8_t r, uint8_t g , uint8_t b);
-void tp_setAllBuffer(uint8_t r, uint8_t g , uint8_t b);
-void tp_sendBuffer();
+extern void tp_ledsetup(uint8_t ledPin, uint16_t pixelCount, bool enableBuffer);
+extern void tp_sendGRBPixel(GRBPixel* pixelPtr);
+extern void tp_sendPixel(uint8_t r, uint8_t g , uint8_t b);
+extern void tp_latch();
+extern void tp_setGRBBuffer(uint16_t index, GRBPixel pixel);
+extern void tp_setBuffer(uint16_t index, uint8_t r, uint8_t g , uint8_t b);
+extern void tp_setAllBuffer(uint8_t r, uint8_t g , uint8_t b);
+extern void tp_sendBuffer();
 

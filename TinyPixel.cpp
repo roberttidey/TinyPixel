@@ -13,7 +13,7 @@
 #define T1H  900    // High pulse for a 1
 #define T1L  350    // Low pulse for a 1
 #define T0H  350    // Width of a 0 bit in ns
-#define T0L  900    // Width of a 0 bit in ns
+#define T0L  500    // Width of a 0 bit in ns
 
 #define LATCH_USEC 260    // Width of the low gap between bits to cause a frame to latch
 
@@ -139,6 +139,8 @@ void tp_ledsetup(uint8_t ledPin, uint16_t pixelCount, bool enableBuffer) {
 	tp_pixelCount = pixelCount;
 	tp_ledPinMask = 1 << ledPin;
 	PIXEL_DDR |= tp_ledPinMask;
+	tp_sendPixel(0,0,0);
+	tp_latch();
 	if(enableBuffer) {
 		tp_buffer = (GRBPixel*)malloc(pixelCount * sizeof(GRBPixel));
 	} else if(tp_buffer != NULL) {
